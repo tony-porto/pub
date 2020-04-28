@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		var t = document.createElement('title');
+    t.innerHTML = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);
+    var x = document.getElementsByTagName('title')[0];
+    document.getElementsByTagName("head")[0].insertBefore(t, x);
+	</script>
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+
+    <link rel="stylesheet" href="http://tonyporto.github.io/web-cdn-scripts/BootStrapChunks/common.min.css">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <style>
+@media screen 
+  and (device-width: 375px) 
+  and (device-height: 812px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation : landscape) {
+    button.hrb-button {
+     -webkit-appearance: none;
+     color: red !important
+    }
+}
+
+/*
+(-webkit-min-device-pixel-ratio:0) and (orientation : landscape)
+*/
+</style>
+ </head>
+	<body>
+	<main role="main">
+
+		<section class="-wrapper">
+			<div class="container">
+      
+      <button class="btn btn-md hrb-button btn-warning">warning</button>
+
+			</div>
+			</section>
+				
+	
+		<script src="http://tonyporto.github.io/web-cdn-scripts/js/loadjs.3.5.2.min.js"></script>
+		<script>
+		loadjs(['http://tonyporto.github.io/web-cdn-scripts/js/modernizr.js',
+						'http://tonyporto.github.io/web-cdn-scripts/BootStrapChunks/js/bootstrap.js'], 'common', {
+
+				success: function() {
+				/* BROWSER COMPATABILITY TESTS
+				 * =============================== */
+				//IOS
+				Modernizr.addTest('ios', function() {
+					return navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
+				});
+				//ANDROID
+				Modernizr.addTest('android', function() {
+					return navigator.userAgent.match(/(Android)/g);
+				});
+				//IE
+				Modernizr.addTest('ie',function(){
+					return (!!navigator.userAgent.match(/MSIE/i) || !!navigator.userAgent.match(/Trident\/7\./));
+				});
+				//SAFARI
+				Modernizr.addTest('safari', function() {
+					return (/Safari\/\d./i.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor));
+				});
+				//EDGE
+				Modernizr.addTest('edge', function() {
+					return (/Edge\/\d./i.test(navigator.userAgent));
+				});
+
+				//INIT DROPDOWN
+				$('.dropdown-toggle').dropdown();
+
+				//LOAD MAIN
+				loadjs('http://tonyporto.github.io/web-cdn-scripts/BootStrapChunks/js/main.js', 'mainJS');
+			},
+			async: false
+		});
+		</script>
+  </main>
+ </body>
+</html>
